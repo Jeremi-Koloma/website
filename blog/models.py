@@ -9,6 +9,7 @@ class Category(models.Model):
 # Create your models here.
 class BlogPost(models.Model):
     author = models.ForeignKey(User, on_delete = models.SET_NULL, null = True) # Clé étrangère
+    category = models.ManyToManyField(Category) # ManyToMany
     title = models.CharField(max_length = 100)
     slug = models.SlugField()
     published = models.BooleanField(default = False) # Par défaut l'article n'est pas publier

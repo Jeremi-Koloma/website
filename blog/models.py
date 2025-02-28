@@ -1,5 +1,10 @@
 from django.db import models
 
+class Category(models.Model):
+    name = models.CharField(max_length=30)
+    slug = models.SlugField()
+
+
 # Create your models here.
 class BlogPost(models.Model):
     title = models.CharField(max_length = 100)
